@@ -1,0 +1,166 @@
+:root {
+  --body-bg-color: hsl(233, 47%, 7%); /*Very dark blue*/
+  --card-bg-color: hsl(244, 38%, 16%);
+  --accent-color: hsl(277, 64%, 61%);
+  /* --card-bg-alpha-color: hsla(244, 38%, 16%,0.7); */
+  --card-bg-alpha-color: rgb(67 16 98 / 70%);
+  --title-color : hsl(0, 0%, 100%); /*(main heading, stats)*/
+  --paraph-color: hsla(0, 0%, 100%, 0.75);
+  --stats-title-color: hsla(0, 0%, 100%, 0.6);
+  --title-font: "Lexend Deca";
+  --mobile-width: 375px;
+  --desk-width: 1024px;
+  font-size: 62.5%;
+  font-family: 'Inter';
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--body-bg-color);
+}
+*{
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Layout 1 father 2 divisions */
+.card{
+  display: flex;
+  flex-flow: wrap column;
+  margin: 2rem 0;
+  width: 90%;
+  height: fit-content;
+  max-width: 430px;
+}
+.card__hero {
+  display: block;
+  height: 30%;
+  width: 100%;
+  position: relative;
+}
+
+.card__main {
+  height: 70%;
+  padding: 5rem 4rem 2rem 4rem;
+  background-color: var(--card-bg-color);
+  color: var(--paraph-color);
+  text-align: center;
+}
+
+/* hero division */
+.card__hero .hero__img {
+  width: 100%;
+  height: 100%;
+}
+.card__hero .hero__coverup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--card-bg-alpha-color);
+  z-index: 1;
+}
+/* main division 2 parts the text ans the list */
+.main__text{
+  height: 50%;
+  text-align: center;
+}
+.main__statslist {
+  height: 50%;
+}
+/* text part */
+.main__text .text--title{
+  color: var(--title-color);
+  font-size: 2.5rem;
+}
+.main__text .text--title span {
+  color: var(--accent-color);
+}
+.main__text .text--paraph{
+  font-family: "Inter";
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  padding: 0 2rem;
+  line-height: 2rem;
+}
+.main__text .text--paraph {
+  line-height: 2.5rem;
+}
+.statslist__item  {
+  text-align: center;
+}
+/* media stats list */
+.main__statslist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.statslist__item{
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+.statslist__item span{
+  content: "10M+";
+  display: block;
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: 2.0rem;
+}
+/* utilities */
+.hero-round-corners{
+  border-radius: 10px 10px 0 0;
+}
+.main-round-corners{
+  border-radius: 0 0 10px 10px;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  .card {
+    flex-flow: row-reverse;
+    height: 440px;
+    max-width: 1110px;
+    
+  }
+  .card__hero{
+    width: 51%;
+    height: 100%;
+  }
+  .card__main {
+    display: flex;
+    width: 49%;
+    height: 100%;
+    padding: 5rem 4rem;
+    flex-direction: column;
+  }
+  .main__text{
+    text-align: left;
+  }
+  .main__text .text--title{
+    font-size: 2.8rem;
+    padding: 0 2rem;
+  }
+  .main__statslist {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+    align-items: center;
+  }
+  .statslist__item{
+    text-align: left;
+  }
+  .hero-round-corners{
+    border-radius: 0 10px 10px 0;
+  }
+  .main-round-corners{
+    border-radius: 10px 0 0 10px;
+  }
+
+}
